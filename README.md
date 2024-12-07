@@ -92,6 +92,8 @@ Make sure to manage the paths to save the results in the appropriate results fol
 
 After all the previous steps are done, the figures or data for the figures is generated using:
 
+### Figures:
+
 **Figure 4:** (heatmap rank, sign and value differences)
 
 `python -m scripts.figmakers.heatmap_ranksign
@@ -101,10 +103,22 @@ After all the previous steps are done, the figures or data for the figures is ge
 
 Run with HF token (will use Llama 8 b locally, so perhaps cloud):
 
-`python -m scripts.figmakers.manipulated_assumptions.ppl
+`python -m scripts.figmakers.manipulated_assumptions_ppl
 `
 This will generate a csv file that is used for the figure in the paper
 
 **Figure 6:** (Bleurt and Cosine similarity plots)
 
+The BLEURT data is generated using:
 
+`python -m scripts.figmakers.bleurt_scatter_fig
+`
+
+The cosine similarity data together with the counting of the closest matches is performed in:
+
+`notebooks/metrics_validation/humansim_plot_data.ipynb
+`
+
+**Figure 8:** (Manipulated sign swaps bar plots)
+
+### Tables:

@@ -8,13 +8,13 @@ import argparse
 In this script we start from the generated experiments from run_experiment.py and add local metrics -- faithfulness and cosine       similarity distance (=no VM or cloud required). 
 """
 
-N_range=2
+N_range=5
 # experiment_dir="longshort_experiments"
 experiment_dir="standard_experiments"
 # experiment_dir="manipulated_experiments"
 
-EXPERIMENT_PATHS=[f"results/{experiment_dir}/experiment_{i}/experiment.pkl" for i in range(1,N_range)]
-SAVE_PATHS=[f"results/{experiment_dir}/experiment_{i}/metrics.pkl" for i in range(1,N_range)]
+EXPERIMENT_PATHS=[f"results/{experiment_dir}/experiment_{i}/experiment.pkl" for i in range(2,N_range)]
+SAVE_PATHS=[f"results/{experiment_dir}/experiment_{i}/metrics.pkl" for i in range(2,N_range)]
  
 if __name__=="__main__":
 

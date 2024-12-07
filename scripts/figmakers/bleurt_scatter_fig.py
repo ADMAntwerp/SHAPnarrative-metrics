@@ -119,8 +119,8 @@ if __name__=="__main__":
 
 
     scatter_df = pd.DataFrame(scatter_data)
-    scatter_df.to_csv(f'{args.SAVE_DIR}/bleurt_scatter_data.csv', index=False)
+    scatter_df.to_csv(f'{SAVE_DIR}/bleurt_scatter_data.csv', index=False)
 
     matching_df = pd.DataFrame(matching_data)
-    matching_df.to_csv(f'{args.SAVE_DIR}/bleurt_matching_data.csv', index=False)
+    matching_df.to_csv(f'{SAVE_DIR}/bleurt_matching_data.csv', index=False)
 
