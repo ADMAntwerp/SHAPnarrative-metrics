@@ -15,7 +15,7 @@ Birdseye overview of the workflow (from paper)
 Clone repository:
 
 ```python
-git clone ...
+git clone git@github.com:TimourIc/SHAPnarrative-metrics.git
 ````
 
 Create venv and activate:
@@ -25,7 +25,7 @@ python -m venv venv
 source venv/bin/activate
 ```
 
-Install your package in editable mode (required step for paths to work):
+The main code is written as a package (although only meant for this research paper). Install the package in editable mode (required step for paths to work):
 
 ```python
 pip install -e .
@@ -41,4 +41,70 @@ All data prep happens inside the notebooks inside `data/`, and the results are s
 
 We did not aim to attain an optimal performance for the target model and hence the preprocessing is pretty basic. 
 
-## 
+## General overview
+
+### Main code:
+`shapnarrative_metrics` Written as a package -- it contains central parts of the code:
+
+`llm_tools` Everything to make the generation and extraction models work
+
+`experiment_management` Managing experiments with many combinations of models/prompt_types/datasets etc.
+
+`metrics` Functions to compute narrative metrics and add them to the experiment classes
+
+### Scripts:
+
+`experiments`: Contains modules to actually run the code from shapnarrative_metrics and generate the narratives and compute metrics. 
+
+`figmakers`: (figures used in a broad sense) Generate either figures directly or data used in specific figures in the paper.
+
+### Other directories:
+
+`data`: Contains data preprocessing code and some other external data files such as human written narratives of manually manipulated assumptions
+
+`results`: All results from actually executing the modules in scripts will go here
+
+## Running experiments and computing metrics
+
+### Step 1 Generating narratives:
+
+Get familiar with scripts/experiments/run_experiments.py and the various parameters and path management there. See how multiple paths correspond to multiple identical iterations of the same experiment (this is the noise-averaging discussed in the paper).
+
+Then run the following (doing all of this runs up quite some API calls so beware of costs) 
+
+1) Run 1 experiment with both short and long prompt      combinations 
+
+2) Run 4 experiments with only long prompt types but MANIP=0
+
+3) Run 4 experiments with only long prompt types but MANIP=1
+
+4) Run 1 experiment with MANIP=1, but use the special shap_permutation manipulation function
+
+Make sure to manage the paths to save the results in the appropriate results folder
+
+### Step 2 Computing Metrics (local):
+
+
+
+
+
+## Reproducing Specific Figures or Tables
+
+After all the previous steps are done, the figures or data for the figures is generated using:
+
+**Figure 4:** (heatmap rank, sign and value differences)
+
+`python -m scripts.figmakers.heatmap_ranksign
+`
+
+**Figure 5:** (Perplexity difference plot)
+
+Run with HF token (will use Llama 8 b locally, so perhaps cloud):
+
+`python -m scripts.figmakers.manipulated_assumptions.ppl
+`
+This will generate a csv file that is used for the figure in the paper
+
+**Figure 6:** (Bleurt and Cosine similarity plots)
+
+

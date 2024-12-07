@@ -13,16 +13,10 @@ from evaluate import EvaluationModule
 from typing import Type, Tuple
 
 
-metrics_path=f"results/experiments/standard_experiments/experiment_temp0_1/metrics_ppl_b.pkl"
-
-with open(metrics_path, "rb") as f:
-  metrics=dill.load(f)
-
-
-experiment_name="experiment_temp0_1"
+experiment_name="experiment_1"
 experiment_dir="standard_experiments"
-METRICS_PATH=f"results/experiments/{experiment_dir}/{experiment_name}/metrics_ppl.pkl"
-SAVE_DIR=f"results/figures"
+METRICS_PATH=f"results/{experiment_dir}/{experiment_name}/metrics.pkl"
+SAVE_DIR=f"results/figures/metrics_validation"
 BLEURT_MODEL="BLEURT-20"
 
 
@@ -46,6 +40,11 @@ if __name__=="__main__":
     parser.add_argument("--SAVE_PATH", default=SAVE_DIR, type=str, help=f"path to save the metrics classes where perplexity has been added")
 
     args=parser.parse_args()
+
+
+    with open(args.METRICS_PATH, "rb") as f:
+        metrics=dill.load(f)
+
 
     #LOAD BLEURT 
     bleurt = load("bleurt", args.BLEURT_MODEL)
@@ -120,8 +119,8 @@ if __name__=="__main__":
 
 
     scatter_df = pd.DataFrame(scatter_data)
-    scatter_df.to_csv(f'results/figures/metrics_validation/bleurt_scatter_data.csv', index=False)
+    scatter_df.to_csv(f'{args.SAVE_DIR}/bleurt_scatter_data.csv', index=False)
 
     matching_df = pd.DataFrame(matching_data)
-    matching_df.to_csv('results/figures/metrics_validation/bleurt_matching_data.csv', index=False)
+    matching_df.to_csv(f'{args.SAVE_DIR}/bleurt_matching_data.csv', index=False)
 

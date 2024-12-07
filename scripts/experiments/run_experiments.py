@@ -21,9 +21,9 @@ from typing import Tuple
 #PATHS
 HUMAN_NARRATIVE_PATHS="data/human_written.json"
 TEMP_SAVE_PATH="results/temp/latest_experiment.pkl"
-SAVE_PATHS=[f"results/standard_experiments/experiment_{i}/experiment.pkl" for i in range(2,5)]
+# SAVE_PATHS=[f"results/standard_experiments/experiment_{i}/experiment.pkl" for i in range(2,5)]
 # SAVE_PATHS=[f"results/longshort_experiments/experiment_{i}/experiment.pkl" for i in range(1,2)]
-# SAVE_PATHS=[f"results/experiments/manip_experiments/experiment_{i}/experiment.pkl" for i in range(1,2)]
+SAVE_PATHS=[f"results/manipulated_experiments/experiment_{i}/experiment.pkl" for i in range(1,5)]
 
 #DEFAULT PARAMS
 SIZE_LIMIT=20
@@ -36,7 +36,7 @@ PROMPT_TYPES=["long"]
 # PROMPT_TYPES=["long","short"]
 
 NUM_FEAT=4
-MANIPULATE=0
+MANIPULATE=1
 MANIPULATE_FUNC=full_inversion
 # MANIPULATE_FUNC=shap_permutation
 APPEND_HUMAN=True
