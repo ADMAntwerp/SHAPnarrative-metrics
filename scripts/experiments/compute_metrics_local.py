@@ -9,8 +9,8 @@ In this script we start from the generated experiments from run_experiment.py an
 """
 
 N_range=2
-experiment_dir="longshort_experiments"
-# experiment_dir="standard_experiments"
+# experiment_dir="longshort_experiments"
+experiment_dir="standard_experiments"
 # experiment_dir="manipulated_experiments"
 
 EXPERIMENT_PATHS=[f"results/{experiment_dir}/experiment_{i}/experiment.pkl" for i in range(1,N_range)]
