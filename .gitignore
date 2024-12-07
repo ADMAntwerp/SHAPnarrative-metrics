@@ -1,0 +1,22 @@
+#package structure
+config/keys.yaml
+config/paths.yaml
+logs/*
+!logs/.gitkeep
+!data/.gitkeep
+results/models/*
+!results/models/.gitkeep
+data/airline_dataset/*
+__pycache__
+.DS_Store
+
+#virtual environments
+venv/*
+
+#package metadata
+*.egg-info/
+ss
+#for now XAIStoriesDev code is cloned into this repo, once it is public in the future will install it as package
+XAIStoriesDev/*
+
+
