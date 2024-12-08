@@ -34,4 +34,30 @@ def full_inversion(explanation_df: pd.DataFrame, num_feat):
     return explanation_df_manip
 
 def shap_permutation(explanation_df: pd.DataFrame, num_feat):
-    pass
+
+    """Manipulates a SHAP table and returns the manipulated version
+    Arguments:
+    -----------------
+    explanation_df: pd.DataFrame
+        A SHAP-table as created in self.gen_variables from the GenerationModel class
+    num_feat: int
+        Number of features to include in the truncated SHAP table
+    Returns:
+    -----------------
+    manipulated_table: pd.DataFrame
+        A truncated SHAP table with the ranks and signs inverted
+    """
+
+    explanation_df_manip=explanation_df.copy()
+    shap_values = explanation_df.loc[0:num_feat-1]["SHAP_value"].values
+    shuffled_SHAP = shap_values.copy()    
+    
+    while np.array_equal(shuffled_SHAP, shap_values):
+        np.random.shuffle(shuffled_SHAP)
+    
+    explanation_df_manip.loc[0:num_feat-1, "SHAP_value"] =shuffled_SHAP
+
+    explanation_df_manip=explanation_df_manip.loc[explanation_df_manip["SHAP_value"].map(lambda x: np.abs(x)).sort_values(ascending=False).index]
+    explanation_df_manip=explanation_df_manip.loc[explanation_df_manip["SHAP_value"].map(lambda x: np.abs(x)).sort_values(ascending=False).index]
+
+    return explanation_df_manip

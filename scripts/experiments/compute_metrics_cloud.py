@@ -44,7 +44,7 @@ if __name__=="__main__":
         metrics=compute_perplexity(metrics, MODELS,args.HF_token)
 
         bleurt = load("bleurt", BLEURT_MODEL)
-        metrics=compute_BLEURT(metrics)
+        metrics=compute_BLEURT(bleurt,metrics)
 
         with open(metrics_path, "wb") as f:
             dill.dump(metrics, f)

@@ -23,11 +23,12 @@ HUMAN_NARRATIVE_PATHS="data/human_written.json"
 TEMP_SAVE_PATH="results/temp/latest_experiment.pkl"
 # SAVE_PATHS=[f"results/standard_experiments/experiment_{i}/experiment.pkl" for i in range(2,5)]
 # SAVE_PATHS=[f"results/longshort_experiments/experiment_{i}/experiment.pkl" for i in range(1,2)]
-SAVE_PATHS=[f"results/manipulated_experiments/experiment_{i}/experiment.pkl" for i in range(1,5)]
-
+# SAVE_PATHS=[f"results/manipulated_experiments/experiment_{i}/experiment.pkl" for i in range(1,5)]
+SAVE_PATHS=[f"results/manipulated_experiments/permutation_manip/experiment.pkl"]
 #DEFAULT PARAMS
 SIZE_LIMIT=20
-GEN_MODEL_LIST=["gpt-4o","llama-3-70b-instruct","claude-sonnet-3.5","mistral-large-2407"]
+# GEN_MODEL_LIST=["gpt-4o","llama-3-70b-instruct","claude-sonnet-3.5","mistral-large-2407"]
+GEN_MODEL_LIST=["gpt-4o"]
 EXT_MODEL_LIST=["gpt-4o"]
 EMB_MODEL_LIST=["voyage-large-2-instruct"]
 DATASET_NAMES=["fifa","credit","student"]
@@ -37,8 +38,8 @@ PROMPT_TYPES=["long"]
 
 NUM_FEAT=4
 MANIPULATE=1
-MANIPULATE_FUNC=full_inversion
-# MANIPULATE_FUNC=shap_permutation
+# MANIPULATE_FUNC=full_inversion
+MANIPULATE_FUNC=shap_permutation
 APPEND_HUMAN=True
 
 #LOAD CONFIG:
