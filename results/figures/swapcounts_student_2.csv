@@ -1,0 +1,5 @@
+feat_names,postoneg,negtopos,total_val
+goout,30,0,80
+failures,45,0,80
+studytime,0,8,32
+age,8,0,32

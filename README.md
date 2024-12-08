@@ -121,4 +121,8 @@ The cosine similarity data together with the counting of the closest matches is 
 
 **Figure 8:** (Manipulated sign swaps bar plots)
 
+These figures were generated as part of an exploration performed in `notebooks/swapcounts_figure.ipynb`
+
+The data for the figures is saved as csv's in `results/figures/` and then used in the paper
+
 ### Tables:

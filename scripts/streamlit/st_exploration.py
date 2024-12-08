@@ -11,7 +11,9 @@ from typing import Tuple, Type
 import argparse
 from scripts.figmakers.heatmap_ranksign import dfs_to_heatmap
 
-METRICS_PATH=f"results/longshort_experiments/experiment_1/metrics.pkl"
+experiments_dir="manipulated_experiments"
+experiments_name="permutation_manip"
+METRICS_PATH=f"results/{experiments_dir}/{experiments_name}/metrics.pkl"
 
 
 if __name__=="__main__":
