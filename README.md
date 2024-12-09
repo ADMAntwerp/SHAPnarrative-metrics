@@ -84,9 +84,13 @@ Make sure to manage the paths to save the results in the appropriate results fol
 
 ### Step 2 Computing Metrics (local):
 
+The computation of the metrics is performed in two steps:
 
+1. `python -m scripts.experiments.compute_metrics_local`: computes everything that can be run on any laptop
 
+2.  `python -m scripts.experiments.compute_metrics_cloud`: computes everything that requires some heavier RAM (loading llama and mistral smaller models) 
 
+Please make sure to manage the paths appropriately when running these for every experiment class performed above. 
 
 ## Reproducing Specific Figures or Tables
 
@@ -126,3 +130,12 @@ These figures were generated as part of an exploration performed in `notebooks/s
 The data for the figures is saved as csv's in `results/figures/` and then used in the paper
 
 ### Tables:
+
+The CSV files for all tables are created by running `python -m scripts.figmakers.tables` 
+
+**Table 3:** The longshort table is directly the csv file found in g `results/figures/tables/longshort/`
+
+**Table 4:** The main table is a combination of the data found in `results/figures/main/longshort/`
+
+
+**Table 5-6-7:** These tables are  a combination of the data found in `results/figures/main/individual/`

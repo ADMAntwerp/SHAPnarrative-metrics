@@ -1,0 +1,6 @@
+g-model,prompt,rank acc,sign acc,value acc,hum sim,bleurt,ppl_llama,ppl_mistral
+gpt-4o,long,0.034,0.216,1.000,0.933,0.488,74.713,56.021
+llama-3-70b,long,0.037,0.209,1.000,0.924,0.479,50.894,35.926
+claude-3.5-sonnet,long,0.031,0.044,1.000,0.931,0.472,94.662,68.548
+mistral-large-2407,long,0.003,0.131,1.000,0.927,0.470,53.569,41.135
+human,long,0.910,0.974,0.967,1.000,0.912,86.233,76.049
