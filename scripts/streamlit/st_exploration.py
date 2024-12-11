@@ -12,13 +12,17 @@ import argparse
 from scripts.figmakers.heatmap_ranksign import dfs_to_heatmap
 
 experiments_dir="manipulated_experiments"
-experiments_name="permutation_manip"
+experiments_name="experiment_1"
 METRICS_PATH=f"results/{experiments_dir}/{experiments_name}/metrics.pkl"
 
 
 if __name__=="__main__":
 
-    with open(METRICS_PATH, "rb") as f:
+    parser = argparse.ArgumentParser(description="Generate a series of narratives and save them")
+    parser.add_argument("--METRICS_PATH", type=str, default=METRICS_PATH,  help=f"Max number of samples to be taken from test set")
+    args = parser.parse_args()
+
+    with open(args.METRICS_PATH, "rb") as f:
         experiments: list[Type[ExperimentMetrics]]=dill.load(f)
 
     #some emojis"
