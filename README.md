@@ -15,7 +15,7 @@ Birdseye overview of the workflow (from paper)
 Clone repository:
 
 ```python
-git clone git@github.com:TimourIc/SHAPnarrative-metrics.git
+git clone git@github.com:ADMAntwerp/SHAPnarrative-metrics.git
 ````
 
 Create venv and activate:
