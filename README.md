@@ -2,9 +2,9 @@
 
 In this repository we explore several automated metrics for XAI narratives based on SHAP. 
 
-This is a research-level repository shared for reproducibility purposes accompanying our recent paper: ... 
+This is a research-level repository shared for reproducibility purposes accompanying our recent paper: [https://arxiv.org/abs/2412.10220](https://arxiv.org/abs/2412.10220)
 
-The package for a practical implementation of metrics will be made available soon. [link to follow].
+A framework for XAI narratives and their metrics will be made available soon. [link to follow].
 
 
 Birdseye overview of the workflow (from paper)
