@@ -15,8 +15,5 @@ venv/*
 
 #package metadata
 *.egg-info/
-ss
-#for now XAIStoriesDev code is cloned into this repo, once it is public in the future will install it as package
-XAIStoriesDev/*
-
+ 
 
